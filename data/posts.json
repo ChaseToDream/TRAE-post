@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-28T05:02:23Z",
+  "updated_at": "2026-04-28T05:07:03Z",
   "user": {
     "id": 903,
     "username": "JasonShane",
@@ -113,7 +113,7 @@
       "tags": [],
       "excerpt": "昨日TRAE IDE中添加的deepseek v4已经开放1M上下文限制 \n【TRAE】TRAE已经支持Deepseek API 1M上下文 \n刚刚看了一下内置模型，大概都已经还原正常上下文了",
       "image_url": "https://trae-forum-cdn.trae.com.cn/prod/original/3X/d/5/d51c09f066bb07f1923ce42afdfe26ec897ce4d8.png",
-      "views": 43,
+      "views": 44,
       "like_count": 2,
       "reply_count": 0,
       "posts_count": 3,

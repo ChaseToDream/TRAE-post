@@ -73,12 +73,18 @@ def resolve_category_id(cat_id, cat_map, sub_cat_map):
     return resolved_id, cat_map.get(resolved_id, f"未知分类({resolved_id})")
 
 
-def get_excluded_ids(config, cat_map):
+def get_excluded_ids(config, cat_map, sub_cat_map):
+    """
+    获取应排除的分类ID集合，包含被排除的顶层大类及其所有下属子分类
+    """
     excluded = set()
     cat_config = config.get("categories", {})
     for cat_id, cat_name in cat_map.items():
         if cat_name in cat_config and not cat_config[cat_name].get("visible", True):
             excluded.add(cat_id)
+    for sub_id, parent_id in sub_cat_map.items():
+        if parent_id in excluded:
+            excluded.add(sub_id)
     return excluded
 
 
@@ -183,7 +189,7 @@ def main():
     cat_map, sub_cat_map = fetch_category_map()
     print(f"  获取到 {len(cat_map)} 个顶层大类")
 
-    excluded_ids = get_excluded_ids(config, cat_map)
+    excluded_ids = get_excluded_ids(config, cat_map, sub_cat_map)
     excluded_names = [cat_map[i] for i in excluded_ids if i in cat_map]
     print(f"  已排除分类: {', '.join(excluded_names) if excluded_names else '无'}")
 
