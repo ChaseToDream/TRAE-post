@@ -34,17 +34,43 @@ def fetch_json(url, retries=MAX_RETRIES):
 
 
 def fetch_category_map():
+    """
+    获取论坛分类列表，仅提取顶层大类
+    Discourse 论坛中：顶层大类的 parent_category_id 为 null/不存在，
+    子分类则有 parent_category_id 指向父分类
+    """
     data = fetch_json(f"{FORUM_BASE}/site.json")
     if not data:
         print("  警告: 无法获取分类列表")
-        return {}
+        return {}, {}
     cat_map = {}
+    sub_cat_map = {}
     for cat in data.get("categories", []):
         cat_id = cat.get("id")
         name = cat.get("name", "")
+        parent_id = cat.get("parent_category_id")
         if cat_id and name:
-            cat_map[cat_id] = name
-    return cat_map
+            if parent_id:
+                # 子分类：记录子分类ID -> 父分类ID的映射
+                sub_cat_map[cat_id] = parent_id
+            else:
+                # 顶层大类
+                cat_map[cat_id] = name
+    print(f"  顶层大类: {len(cat_map)} 个, 子分类: {len(sub_cat_map)} 个(已忽略)")
+    return cat_map, sub_cat_map
+
+
+def resolve_category_id(cat_id, cat_map, sub_cat_map):
+    """
+    解析分类ID：如果是子分类则递归查找其顶层父分类
+    返回最终的顶层大类的 ID 和名称
+    """
+    resolved_id = cat_id
+    visited = set()
+    while resolved_id in sub_cat_map and resolved_id not in visited:
+        visited.add(resolved_id)
+        resolved_id = sub_cat_map[resolved_id]
+    return resolved_id, cat_map.get(resolved_id, f"未知分类({resolved_id})")
 
 
 def get_excluded_ids(config, cat_map):
@@ -102,9 +128,13 @@ def fetch_user_topics(username):
     return all_topics
 
 
-def process_topic(topic, cat_map):
-    cat_id = topic.get("category_id", 0)
-    cat_name = cat_map.get(cat_id, f"未知分类({cat_id})")
+def process_topic(topic, cat_map, sub_cat_map):
+    """
+    处理单条帖子数据，将子分类帖子归入对应的顶层大类
+    """
+    raw_cat_id = topic.get("category_id", 0)
+    # 解析分类ID：子分类会映射到其顶层父分类
+    cat_id, cat_name = resolve_category_id(raw_cat_id, cat_map, sub_cat_map)
     tags = []
     for t in topic.get("tags", []):
         if isinstance(t, dict):
@@ -150,8 +180,8 @@ def main():
     config = load_config()
 
     print("[1/4] 获取论坛分类列表...")
-    cat_map = fetch_category_map()
-    print(f"  获取到 {len(cat_map)} 个分类")
+    cat_map, sub_cat_map = fetch_category_map()
+    print(f"  获取到 {len(cat_map)} 个顶层大类")
 
     excluded_ids = get_excluded_ids(config, cat_map)
     excluded_names = [cat_map[i] for i in excluded_ids if i in cat_map]
@@ -178,7 +208,7 @@ def main():
             continue
         if not topic.get("visible", True):
             continue
-        filtered_topics.append(process_topic(topic, cat_map))
+        filtered_topics.append(process_topic(topic, cat_map, sub_cat_map))
     filtered_topics.sort(key=lambda x: x["created_at"], reverse=True)
 
     categories = {}

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-28T04:51:42Z",
+  "updated_at": "2026-04-28T05:02:23Z",
   "user": {
     "id": 903,
     "username": "JasonShane",
@@ -10,15 +10,14 @@
     "trust_level": 2,
     "created_at": "2026-03-03T02:28:29.304Z"
   },
-  "total_posts": 39,
-  "excluded_posts": 7,
+  "total_posts": 41,
+  "excluded_posts": 5,
   "categories": {
     "技巧分享": 10,
     "互动交流": 18,
-    "项目实战": 4,
-    "SOLO挑战赛专区": 4,
-    "作品分享": 1,
-    "案例与作品": 2
+    "案例与作品": 7,
+    "帮助与支持": 2,
+    "SOLO挑战赛专区": 4
   },
   "posts": [
     {
@@ -86,8 +85,8 @@
       "title": "TRAE + Pencil UI设计全过程案例拆解",
       "created_at": "2026-04-26T07:58:33.815Z",
       "last_posted_at": "2026-04-28T04:15:08.244Z",
-      "category_id": 25,
-      "category_name": "项目实战",
+      "category_id": 10,
+      "category_name": "案例与作品",
       "tags": [
         "基础技巧",
         "solo",
@@ -147,8 +146,8 @@
       "title": "三小时从零开始SOLO出一款Windows端AI辅助垃圾清理软件",
       "created_at": "2026-04-25T06:05:43.578Z",
       "last_posted_at": "2026-04-26T07:18:54.808Z",
-      "category_id": 25,
-      "category_name": "项目实战",
+      "category_id": 10,
+      "category_name": "案例与作品",
       "tags": [
         "基础技巧",
         "solo",
@@ -161,6 +160,25 @@
       "reply_count": 0,
       "posts_count": 5,
       "url": "https://forum.trae.cn/t/topic/12375",
+      "pinned": false,
+      "closed": false,
+      "archived": false
+    },
+    {
+      "id": 12056,
+      "title": "关于TRAE IDE插件搜索Pencil的bug问题",
+      "created_at": "2026-04-24T03:31:12.716Z",
+      "last_posted_at": "2026-04-24T05:48:28.814Z",
+      "category_id": 7,
+      "category_name": "帮助与支持",
+      "tags": [],
+      "excerpt": "你的运行环境（版本号「点击帮助-关于-复制」）： \n\nTRAE CN \n版本: 3.3.53 \nVSCode 版本: 1.107.1 \n提交: 29284ef8d129bac665838dd911f3834a41b9bf37 \n日期: 20...",
+      "image_url": "https://trae-forum-cdn.trae.com.cn/prod/optimized/3X/e/a/eaec14037adfd2085442ef83da7aca4c107a0885_2_1024x547.png",
+      "views": 17,
+      "like_count": 2,
+      "reply_count": 1,
+      "posts_count": 4,
+      "url": "https://forum.trae.cn/t/topic/12056",
       "pinned": false,
       "closed": false,
       "archived": false
@@ -255,8 +273,8 @@
       "title": "精华丨GLM-5.1丨一次完美的项目重构全流程剖析案例(一句话成型无二改无bug)",
       "created_at": "2026-04-18T05:31:40.470Z",
       "last_posted_at": "2026-04-22T07:49:19.712Z",
-      "category_id": 25,
-      "category_name": "项目实战",
+      "category_id": 10,
+      "category_name": "案例与作品",
       "tags": [
         "基础技巧",
         "模型"
@@ -388,7 +406,7 @@
       ],
       "excerpt": "1.摘要：\n利用SOLO的MTC模式，使用一句话+30min的饮茶时间，获得一份超专业的制造业精益生产调研报告，并且同步输出一份PPT \n2.背景：\n作为一名前制造业生产管理者，在以往的工作中免不了面对前沿的精益生产资讯的总结、归纳和输出，...",
       "image_url": "https://trae-forum-cdn.trae.com.cn/prod/optimized/2X/6/6aa9f7fc1e0da903bd20c0f2f49d52e689ece515_2_1024x478.png",
-      "views": 29,
+      "views": 30,
       "like_count": 1,
       "reply_count": 0,
       "posts_count": 1,
@@ -544,8 +562,8 @@
       "title": "调研员丨一个帮你选框架的智能体",
       "created_at": "2026-04-04T05:59:48.273Z",
       "last_posted_at": "2026-04-04T05:59:48.363Z",
-      "category_id": 26,
-      "category_name": "作品分享",
+      "category_id": 10,
+      "category_name": "案例与作品",
       "tags": [
         "基础技巧",
         "自定义智能体"
@@ -566,8 +584,8 @@
       "title": "真·喂饭级新SOLO开发全流程丨Bangumi2notion项目案例",
       "created_at": "2026-04-03T11:46:54.796Z",
       "last_posted_at": "2026-04-08T14:54:40.910Z",
-      "category_id": 25,
-      "category_name": "项目实战",
+      "category_id": 10,
+      "category_name": "案例与作品",
       "tags": [
         "新SOLO初体验"
       ],
@@ -701,6 +719,25 @@
       "reply_count": 0,
       "posts_count": 3,
       "url": "https://forum.trae.cn/t/topic/3144",
+      "pinned": false,
+      "closed": false,
+      "archived": false
+    },
+    {
+      "id": 3092,
+      "title": "历史对话Beta功能文本描述与实际对应错误",
+      "created_at": "2026-03-25T12:35:25.367Z",
+      "last_posted_at": "2026-03-26T07:12:51.847Z",
+      "category_id": 7,
+      "category_name": "帮助与支持",
+      "tags": [],
+      "excerpt": "你的运行环境（版本号「点击帮助-关于-复制」）： \n\n3.3.38 \n\n问题描述（你遇到了什么问题？）： \n\n目前Beta测试功能：历史对话的文本描述与实际使用存在差异 \n\n报错信息或截图（如有）： \n软件内文本描述是 #历史对话 引用以往...",
+      "image_url": "https://trae-forum-cdn.trae.com.cn/prod/optimized/2X/b/b5f576793fd4e92d34fcbe4051794b1ee9f6d2b6_2_1023x625.png",
+      "views": 40,
+      "like_count": 14,
+      "reply_count": 5,
+      "posts_count": 7,
+      "url": "https://forum.trae.cn/t/topic/3092",
       "pinned": false,
       "closed": false,
       "archived": false
