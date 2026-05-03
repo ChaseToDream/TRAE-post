@@ -834,6 +834,9 @@ footer a:hover { text-decoration: underline; }
       case 'replies':
         sorted.sort(function(a,b){ return (b.reply_count||0) - (a.reply_count||0); });
         break;
+      default:
+        sorted.sort(function(a,b){ return new Date(b.created_at) - new Date(a.created_at); });
+        break;
     }
     return sorted;
   }
