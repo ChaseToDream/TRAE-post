@@ -1,67 +1,23 @@
 # TRAE Forum Posts
 
-展示个人在 [TRAE 官方中文社区](https://forum.trae.cn/) 的帖子，自动排除指定分类，按分类整理展示。
+> 自动展示个人在 [TRAE 官方中文社区](https://forum.trae.cn/) 的帖子，支持分类筛选、关键词搜索、多视图切换，数据每 4 小时自动更新。
 
 ![License](https://img.shields.io/github/license/ChaseToDream/TRAE-post?style=flat-square)
 ![Python](https://img.shields.io/badge/Python-3.11-blue?style=flat-square)
 ![Update](https://img.shields.io/github/actions/workflow/status/ChaseToDream/TRAE-post/update.yml?style=flat-square&label=auto-update)
 
-## 功能特性
+## ✨ 功能特性
 
-- 从 TRAE 论坛爬取指定用户全部帖子
-- 通过 `config.json` 灵活控制分类可见性（默认排除「Bug 反馈」「产品建议」）
-- 分类导航筛选 + 关键词搜索
-- 瀑布流分类视图 / 卡片列表视图双模式
-- 响应式设计，适配桌面与移动端
-- GitHub Actions 每 4 小时自动更新数据
-- 支持 Cloudflare Pages / GitHub Pages 部署
+| 功能 | 说明 |
+|------|------|
+| 🔄 自动更新 | GitHub Actions 每 4 小时自动爬取最新帖子 |
+| 📂 分类筛选 | 通过 `config.json` 灵活控制分类可见性 |
+| 🔍 关键词搜索 | 支持搜索帖子标题、内容和分类 |
+| 📊 双视图模式 | 瀑布流分类视图 / 卡片列表视图 |
+| 📱 响应式设计 | 完美适配桌面与移动端 |
+| ⚡ 骨架屏加载 | 优化加载体验，减少页面闪烁 |
 
-## UI 优化特性
-
-### 视图切换
-- **分类视图**：按分类列展示帖子，便于快速浏览
-- **卡片视图**：卡片式布局，展示更多详细信息
-
-### 排序功能
-- 最新发布：按发布时间倒序排列
-- 最早发布：按发布时间正序排列
-- 最多浏览：按浏览量排序
-- 最多点赞：按点赞数排序
-- 最多回复：按回复数排序
-
-### 搜索增强
-- 支持搜索帖子标题、内容和分类
-- 实时搜索结果计数
-- 一键清除搜索内容
-
-### 骨架屏加载
-- 优化加载体验，减少页面闪烁
-- 平滑的内容过渡动画
-
-### 交互优化
-- 更大的点击区域和更清晰的视觉反馈
-- 键盘导航支持（焦点可见）
-- 平滑的动画过渡效果
-
-## 项目结构
-
-```
-├── index.html                  # 静态展示页面（单文件应用）
-├── config.json                 # 分类显示配置（颜色、图标、可见性）
-├── data/
-│   └── posts.json              # 爬取的帖子数据（自动生成，勿手动编辑）
-├── scripts/
-│   └── fetch_posts.py          # 数据爬取脚本
-├── requirements.txt            # Python 依赖
-├── .github/workflows/
-│   └── update.yml              # GitHub Actions 自动更新工作流
-├── SETUP.md                    # 从零配置指南
-└── LICENSE                     # MIT 许可证
-```
-
-## 快速开始
-
-> 完整的从零配置指南请参考 [SETUP.md](./SETUP.md)
+## 🚀 快速开始
 
 ### 前置条件
 
@@ -92,17 +48,19 @@ FORUM_USERNAME=你的论坛用户名 python scripts/fetch_posts.py
 # 用浏览器打开 index.html 即可
 ```
 
-## 配置说明
+> 📖 完整配置指南请参考 [SETUP.md](./SETUP.md)
+
+## ⚙️ 配置说明
 
 ### 环境变量
 
 | 变量名 | 必填 | 说明 |
 |--------|------|------|
-| `FORUM_USERNAME` | 是 | TRAE 论坛用户名，如 `JasonShane` |
+| `FORUM_USERNAME` | ✅ | TRAE 论坛用户名，如 `JasonShane` |
 
 ### config.json 分类配置
 
-`config.json` 控制每个分类的显示样式和可见性：
+控制每个分类的显示样式和可见性：
 
 ```json
 {
@@ -118,9 +76,9 @@ FORUM_USERNAME=你的论坛用户名 python scripts/fetch_posts.py
 | `color` | string | 分类主色，用于标签和标题 |
 | `soft` | string | 分类浅色，用于背景和徽章 |
 | `icon` | string | 分类图标（Emoji） |
-| `visible` | boolean | `false` 则该分类的帖子不会出现在页面中 |
+| `visible` | boolean | `false` 则该分类的帖子不会出现 |
 
-> 脚本运行时会自动从论坛获取最新分类列表，与 `config.json` 中的配置进行匹配。论坛新增的分类若未在配置中声明，将使用默认样式显示。
+> 💡 脚本运行时会自动从论坛获取最新分类列表，新增分类若未在配置中声明，将使用默认样式显示。
 
 ### GitHub Actions Secret
 
@@ -130,7 +88,7 @@ FORUM_USERNAME=你的论坛用户名 python scripts/fetch_posts.py
 |------|------|------|
 | `FORUM_USERNAME` | 你的论坛用户名 | 工作流运行时读取此变量 |
 
-## 部署
+## 🌐 部署
 
 ### Cloudflare Pages
 
@@ -152,18 +110,23 @@ FORUM_USERNAME=你的论坛用户名 python scripts/fetch_posts.py
 
 > 两种部署方式均无需构建步骤，直接托管静态文件即可。
 
-## 自动更新
+## 📁 项目结构
 
-GitHub Actions 工作流（[update.yml](./.github/workflows/update.yml)）配置为每 4 小时自动运行，也可在 Actions 页面手动触发。
+```
+├── index.html                  # 静态展示页面（单文件应用）
+├── config.json                 # 分类显示配置（颜色、图标、可见性）
+├── data/
+│   └── posts.json              # 爬取的帖子数据（自动生成）
+├── scripts/
+│   └── fetch_posts.py          # 数据爬取脚本
+├── requirements.txt            # Python 依赖
+├── .github/workflows/
+│   └── update.yml              # GitHub Actions 自动更新工作流
+├── SETUP.md                    # 从零配置指南
+└── LICENSE                     # MIT 许可证
+```
 
-工作流执行流程：
-
-1. 运行 `scripts/fetch_posts.py` 爬取最新数据
-2. 检测 `data/posts.json` 是否有变化
-3. 如有变化，自动提交到仓库
-4. Cloudflare Pages / GitHub Pages 检测到提交后自动重新部署
-
-## 自定义
+## 🎨 自定义
 
 | 自定义项 | 文件 | 说明 |
 |----------|------|------|
@@ -173,23 +136,15 @@ GitHub Actions 工作流（[update.yml](./.github/workflows/update.yml)）配置
 | 更新频率 | `.github/workflows/update.yml` | 修改 `cron` 表达式 |
 | 爬取间隔/重试 | `scripts/fetch_posts.py` | 修改 `REQUEST_DELAY`、`MAX_RETRIES` 常量 |
 
-## 技术说明
+## 🔄 自动更新
 
-- 论坛基于 Discourse 平台，通过 JSON API（URL 后加 `.json`）获取结构化数据
-- 用户帖子 API：`/topics/created-by/{username}.json`（支持分页）
-- 用户信息 API：`/u/{username}.json`
-- 分类信息 API：`/site.json`
-- 爬取间隔 2 秒，失败自动重试 3 次，避免触发限流
+GitHub Actions 工作流（[update.yml](./.github/workflows/update.yml)）配置为每 4 小时自动运行，也可在 Actions 页面手动触发。
 
-## 性能优化
+```
+爬取数据 → 检测变化 → 自动提交 → 自动部署
+```
 
-- **骨架屏加载**：减少页面加载时的视觉闪烁
-- **懒加载图片**：卡片视图中的图片使用懒加载
-- **CSS 变量**：统一的主题系统，便于维护
-- **平滑动画**：使用 CSS 过渡提升用户体验
-- **响应式设计**：适配各种屏幕尺寸
-
-## 常见问题
+## ❓ 常见问题
 
 <details>
 <summary>运行脚本报错「请设置环境变量 FORUM_USERNAME」</summary>
@@ -232,11 +187,11 @@ export FORUM_USERNAME="你的用户名"
 3. 浏览器控制台检查是否有跨域或 404 错误
 </details>
 
-## 相关文档
+## 📚 相关文档
 
 - [SETUP.md](./SETUP.md) — 从零开始配置项目的完整指南
 - [LICENSE](./LICENSE) — MIT 开源许可证
 
-## License
+## 📄 License
 
 [MIT](./LICENSE) © 逐梦星辰
