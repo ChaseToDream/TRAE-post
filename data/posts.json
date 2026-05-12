@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-12T10:29:31Z",
+  "updated_at": "2026-05-12T14:17:18Z",
   "user": {
     "id": 903,
     "username": "JasonShane",
@@ -10,10 +10,10 @@
     "trust_level": 2,
     "created_at": "2026-03-03T02:28:29.304Z"
   },
-  "total_posts": 60,
+  "total_posts": 61,
   "excluded_posts": 7,
   "categories": {
-    "SOLO技能创作赛": 1,
+    "SOLO技能创作赛": 2,
     "帮助与支持": 9,
     "技巧分享": 15,
     "互动交流": 20,
@@ -22,6 +22,27 @@
     "SOLO挑战赛专区": 4
   },
   "posts": [
+    {
+      "id": 17173,
+      "title": "【Skill 创作】我做了一个蒸馏TRAE社区用户的Skill",
+      "created_at": "2026-05-12T12:36:01.846Z",
+      "last_posted_at": "2026-05-12T12:56:05.227Z",
+      "category_id": 37,
+      "category_name": "SOLO技能创作赛",
+      "tags": [
+        "Skill创作"
+      ],
+      "excerpt": "1、Skill简介 ： \ntrae-user-distiller可以一键蒸馏TRAE社区的用户，搜集话题和发帖内容，自我总结和梳理，输出对应的Skill，用来模仿复刻该用户的言行举止！ \n2、使用场景 ： \n当你找到一位大佬，但是你又不想挨…",
+      "image_url": "https://trae-forum-cdn.trae.com.cn/prod/optimized/3X/7/f/7ffab532e52772f44906f5b8a3b224f32359b964_2_1024x547.png",
+      "views": 27,
+      "like_count": 0,
+      "reply_count": 0,
+      "posts_count": 4,
+      "url": "https://forum.trae.cn/t/topic/17173",
+      "pinned": false,
+      "closed": false,
+      "archived": false
+    },
     {
       "id": 16993,
       "title": "【Skill 创作】全功能一键反推图片提示词Skill",
@@ -1256,9 +1277,9 @@
     }
   ],
   "_quality": {
-    "raw_fetched": 7,
-    "valid_posts": 60,
-    "total_posts": 60,
+    "raw_fetched": 8,
+    "valid_posts": 61,
+    "total_posts": 61,
     "issues": {
       "missing_title": 0,
       "missing_date": 0,
