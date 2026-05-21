@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-21T07:47:32Z",
+  "updated_at": "2026-05-21T11:20:20Z",
   "user": {
     "id": 903,
     "username": "JasonShane",
@@ -10,10 +10,10 @@
     "trust_level": 2,
     "created_at": "2026-03-03T02:28:29.304Z"
   },
-  "total_posts": 67,
+  "total_posts": 68,
   "excluded_posts": 7,
   "categories": {
-    "SOLO技能创作赛": 6,
+    "SOLO技能创作赛": 7,
     "帮助与支持": 10,
     "AI充电站": 5,
     "技巧分享": 15,
@@ -22,6 +22,27 @@
     "SOLO挑战赛专区": 4
   },
   "posts": [
+    {
+      "id": 18817,
+      "title": "【Skill 创作】TRAE 自定义模型配置Skill 帮你解决99%的配置参数问题！[还会实时更新进化]",
+      "created_at": "2026-05-21T11:04:23.321Z",
+      "last_posted_at": "2026-05-21T11:04:23.418Z",
+      "category_id": 37,
+      "category_name": "SOLO技能创作赛",
+      "tags": [
+        "Skill创作"
+      ],
+      "excerpt": "1、Skill 简介\n这是一个帮你在 TRAE/SOLO 中快速配置第三方 AI 模型的 Skill，支持 60+ 国内外厂商（DeepSeek、OpenAI、智谱、Kimi、硅基流动等），自动提取 Base URL、模型 ID、上下文长度…",
+      "image_url": "https://trae-forum-cdn.trae.com.cn/prod/optimized/3X/d/b/db0bf7f1ff0d8fd4af1af553b69557031a8834e5_2_1024x547.png",
+      "views": 1,
+      "like_count": 0,
+      "reply_count": 0,
+      "posts_count": 1,
+      "url": "https://forum.trae.cn/t/topic/18817",
+      "pinned": false,
+      "closed": false,
+      "archived": false
+    },
     {
       "id": 18753,
       "title": "【Skill 创作】一句话描述你的心情，AI 帮你找到最配的那首古诗词",
@@ -1402,8 +1423,8 @@
   ],
   "_quality": {
     "raw_fetched": 8,
-    "valid_posts": 67,
-    "total_posts": 67,
+    "valid_posts": 68,
+    "total_posts": 68,
     "issues": {
       "missing_title": 0,
       "missing_date": 0,
